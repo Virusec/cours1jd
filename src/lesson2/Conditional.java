@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Conditional {
     public static void main(String[] args) {
 //        task1();
-//        task2();
+        task2();
 //        task3();
 //        task4();
 //        task5();
@@ -22,7 +22,7 @@ public class Conditional {
 //        task1_5();
 //        task1_6();
 //        taskSlack6();
-        taskSlack7();
+//        taskSlack7();
     }
 
     public static void task1() {
@@ -48,21 +48,32 @@ public class Conditional {
         int clientOS = sc.nextInt();
         System.out.println("Укажите год производства телефона");
         int clientDeviceYear = sc.nextInt();
-        if (clientOS == 0) {
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            }
-        } else if (clientOS == 1) {
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            }
+        if (clientOS == 0 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        } else if (clientOS == 0 && clientDeviceYear > 2015) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else if (clientOS == 1 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (clientOS == 1 && clientDeviceYear > 2015) {
+            System.out.println("Установите версию приложения для Android по ссылке");
         } else {
             System.out.print("Система не распознана");
         }
+//        if (clientOS == 0) {
+//            if (clientDeviceYear < 2015) {
+//                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+//            } else {
+//                System.out.println("Установите версию приложения для iOS по ссылке");
+//            }
+//        } else if (clientOS == 1) {
+//            if (clientDeviceYear < 2015) {
+//                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+//            } else {
+//                System.out.println("Установите версию приложения для Android по ссылке");
+//            }
+//        } else {
+//            System.out.print("Система не распознана");
+//        }
         sc.close();
     }
 
