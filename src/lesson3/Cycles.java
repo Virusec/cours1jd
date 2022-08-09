@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Cycles {
     public static void main(String[] args) {
-        task1();
-        task2();
-        task3();
-        task4();
+//        task1();
+//        task2();
+//        task3();
+//        task4();
         task5();
 //        task6();
 //        task7();
@@ -26,15 +26,12 @@ public class Cycles {
 
 
     public static void task1() {
-        int i = 1;
-        while (i <= 10) {
-            System.out.printf("%d ", i++);
+        int i = 0;
+        while (i < 10) {
+            System.out.printf("%d ", ++i);
         }
         System.out.println();
         for (; i >= 1; i--) {
-            if (i == 11) {
-                continue;
-            }
             System.out.printf("%d ", i);
         }
     }
@@ -46,9 +43,12 @@ public class Cycles {
     }
 
     public static void task3() {
-        for (int year = 1822; year < 2122; year++) {
-            if (year % 79 == 0) {
-                System.out.println(year);
+        int firstYear = 1822;
+        int lastYear = 2122;
+        int gap = 79;
+        for (int cometFlyingYear = firstYear; cometFlyingYear < lastYear; cometFlyingYear++) {
+            if (cometFlyingYear % gap == 0) {
+                System.out.println(cometFlyingYear);
             }
         }
     }
@@ -72,12 +72,14 @@ public class Cycles {
     public static void task5() {
         int num1 = 0;
         int num2 = 1;
+        int numFibonacci;
+        int numbers = 10;
         System.out.print(num1 + " " + num2 + " ");
-        for (int j = 0; j < 4; j++) {
-            System.out.print(num1 + num2 + " ");
-            num1 = num2 + num1;
-            num2 = num2 + num1 ;
-            System.out.print(num2 + " ");
+        for (int j = 2; j < numbers; j++) {
+            numFibonacci = num1 + num2;
+            System.out.printf("%d ", numFibonacci);
+            num1 = num2;
+            num2 = numFibonacci;
         }
     }
 
