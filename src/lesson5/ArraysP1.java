@@ -1,4 +1,4 @@
-package lesson4;
+package lesson5;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -28,30 +28,29 @@ public class ArraysP1 {
 
     public static void task2() {
         int[] array1 = new int[]{1, 2, 3};
-        for (int i : array1) {
-            if (i == array1[2]) {
-                System.out.print(i);
-                break;
+        for (int i = 0; i < array1.length; i++) {
+            System.out.print(array1[i]);
+            if (i != array1.length - 1) {
+                System.out.print(",");
             }
-            System.out.print(i + ",");
         }
+
         System.out.println();
         double[] array2 = new double[]{1.57, 7.654, 9.986};
-        for (double v : array2) {
-            if (v == array2[2]) {
-                System.out.print(v);
-                break;
+        for (int i = 0; i < array2.length; i++) {
+            System.out.print(array2[i]);
+            if (i != array2.length - 1) {
+                System.out.print(",");
             }
-            System.out.print(v + ",");
         }
+
         System.out.println();
-        String[] array3 = new String[]{"Petya", "Misha", "Kolya"};
-        for (String s : array3) {
-            if (s.equals(array3[2])) {
-                System.out.print(s);
-                break;
+        String[] array3 = new String[]{"Petya", "Misha","Misha", "Kolya"};
+        for (int i = 0; i < array3.length; i++) {
+            System.out.print(array3[i]);
+            if (i != array3.length - 1) {
+                System.out.print(",");
             }
-            System.out.print(s + ",");
         }
     }
 
@@ -60,27 +59,29 @@ public class ArraysP1 {
         for (int i = array1.length - 1; i >= 0; i--) {
             if (i == 0) {
                 System.out.print(array1[i]);
-                break;
+            } else {
+                System.out.printf("%d,", array1[i]);
             }
-            System.out.printf("%d,", array1[i]);
         }
         System.out.println();
+
         double[] array2 = new double[]{1.57, 7.654, 9.986};
         for (int i = array2.length - 1; i >= 0; i--) {
             if (i == 0) {
                 System.out.print(array2[i]);
-                break;
+            } else {
+                System.out.printf("%s,", array2[i]);
             }
-            System.out.printf("%s,", array2[i]);
         }
         System.out.println();
+
         String[] array3 = new String[]{"Petya", "Misha", "Kolya"};
         for (int s = array3.length - 1; s >= 0; s--) {
             if (s == 0) {
                 System.out.print(array3[s]);
-                break;
+            } else {
+                System.out.printf("%s,", array3[s]);
             }
-            System.out.printf("%s,", array3[s]);
         }
     }
 
