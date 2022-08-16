@@ -236,7 +236,7 @@ public class ArraysP2 {
         System.out.println(Arrays.toString(array));
         int maxElement = array[0];
         int maxIndex = 0;
-        for (int i = 1; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (array[i] > maxElement) {
                 maxElement = array[i];
                 maxIndex = i;
@@ -251,18 +251,18 @@ public class ArraysP2 {
 //        Выведите данную информацию в консоль. Если два разных элемента встречаются одинаковое количество
 //        раз, то выведите -1.
 
-        int[] array = generateRandomArray2(0, 1, 12);
-        System.out.println(Arrays.toString(array));
+        int[] array2 = generateRandomArray2(0, 1, 12);
+        System.out.println(Arrays.toString(array2));
         int num = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == 0) {
+        for (int i = 0; i < array2.length; i++) {
+            if (array2[i] == 0) {
                 num++;
             }
         }
         System.out.println(num);
-        if (num > array.length - num) {
+        if (num > array2.length - num) {
             System.out.println("0");
-        } else if (num < array.length - num) {
+        } else if (num < array2.length - num) {
             System.out.println("1");
         } else {
             System.out.println("-1");
@@ -288,10 +288,10 @@ public class ArraysP2 {
         int lines = 8;
         int columns = 5;
 
-        int[][] array = generateRandomArray3(10, 99, lines, columns);
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
+        int[][] array3 = generateRandomArray3(10, 99, lines, columns);
+        for (int[] l : array3) {
+            for (int c : l) {
+                System.out.print(c + " ");
             }
             System.out.println();
         }
@@ -314,17 +314,148 @@ public class ArraysP2 {
         int lines = 5;
         int columns = 8;
 
-        int[][] array = generateRandomArray3(10, 99, lines, columns);
-        int maxNum = array[0][0];
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
-                if (array[i][j] > maxNum) {
-                    maxNum = array[i][j];
+        int[][] array4 = generateRandomArray3(10, 99, lines, columns);
+        int maxNum = array4[0][0];
+        for (int[] matrix : array4) {
+            for (int sub : matrix) {
+                System.out.print(sub + " ");
+                if (sub > maxNum) {
+                    maxNum = sub;
                 }
             }
             System.out.println();
         }
         System.out.println("\nМаксимальный элемент массива " + maxNum);
+
+
+//        int[][] matrix = new int[5][];
+//        for (int i = 0; i < matrix.length; i++) {
+//            matrix[i] = generateRandomArray2(10, 99, 8);
+//        }
+//
+//        int max = matrix[0][0];
+//        for (int[] subArr : matrix) {
+//            for (int num : subArr) {
+//                max = Math.max(max, num);
+//            }
+//            System.out.println(Arrays.toString(subArr));
+//        }
+//
+//        System.out.println("Максимальный элемент: " + max);
+    }
+
+    public static void additionalTask5() {
+
+//        Напишите программу, которая генерирует массив из 7 строк по 4 столбца в каждой из случайных целых чисел
+//        из отрезка [-5;5]. Результат программы выведите в консоль. Отдельно выведите индекс строки с наибольшим
+//        произведением элементов.
+
+        int lines = 7;
+        int columns = 4;
+
+        int[][] array5 = generateRandomArray3(-5, 5, lines, columns);
+        int[] array6 = new int[lines];
+        for (int i = 0; i < array5.length; i++) {
+            int multiply = 1;
+            for (int j = 0; j < array5[i].length; j++) {
+                multiply *= array5[i][j];
+                array6[i] = multiply;
+            }
+            System.out.println(Arrays.toString(array5[i]));
+        }
+//        System.out.println(Arrays.toString(array6));
+        int maxNum = 0;
+        int maxIndex = array6[0];
+        for (int i = 0; i < array6.length; i++) {
+            if (array6[i] > maxNum) {
+                maxNum = array6[i];
+                maxIndex = i;
+            }
+        }
+        System.out.printf("\nМаксимальное произведение в строке %d.\n", maxIndex);
+
+
+//        int[][] matrix = new int[7][];
+//        for (int i = 0; i < matrix.length; i++) {
+//            matrix[i] = generateRandomArray2(1, 5, 4);
+//        }
+//
+//        int maxProduct = Integer.MIN_VALUE;
+//        int maxProductIndex = 0;
+//        for (int i = 0; i < matrix.length; i++) {
+//            int tmp = 1;
+//            for (int num : matrix[i]) {
+//                tmp *= num;
+//            }
+//            if (tmp > maxProduct) {
+//                maxProduct = tmp;
+//                maxProductIndex = i;
+//            }
+//            System.out.println(Arrays.toString(matrix[i]));
+//        }
+//        System.out.println();
+//
+//        System.out.println("Максимальное произведение в строке № " + maxProductIndex);
+    }
+
+    public static void additionalTask6() {
+
+//        Напишите программу, которая генерирует двумерный массив из 6 строк по 7 столбцов в каждой.
+//        Массив должен состоять из случайных целых чисел из промежутка [0;9].Результат программы выведите в консоль.
+//        Преобразуйте массив таким образом, чтобы на первом месте (индекс 0) в каждой строке стоял самое большое число
+//        в строке. Состав массива изменять нельзя, но можно переставлять элементы в рамках одной строки. Порядок
+//        остальных элементов строки не важен. Результат преобразований выведите в консоль.
+
+        int lines = 6;
+        int columns = 7;
+
+        int[][] array7 = generateRandomArray3(0, 9, lines, columns);
+        for (int[] line : array7) {
+            System.out.println(Arrays.toString(line));
+        }
+        System.out.println();
+
+        for (int[] row : array7) {
+            int temp = row[0];
+            int index = 0;
+            for (int j = 1; j < row.length; j++) {
+                if (row[j] > row[0]) {
+                    row[0] = row[j];
+                    index = j;
+                }
+            }
+            row[index] = temp;
+            System.out.println(Arrays.toString(row));
+        }
+
+
+//        int[][] matrix = new int[6][];
+//        for (int i = 0; i < matrix.length; i++) {
+//            matrix[i] = generateRandomArray2(0, 9, 7);
+//        }
+//
+//        for (int[] subArr : matrix) {
+//            System.out.println(Arrays.toString(subArr));
+//        }
+//
+//        for (int[] subArr : matrix) {
+//            int maxElement = subArr[0];
+//            int maxElementIndex = 0;
+//            for (int i = 1; i < subArr.length; i++) {
+//                if (subArr[i] > maxElement) {
+//                    maxElement = subArr[i];
+//                    maxElementIndex = i;
+//                }
+//            }
+//            if (maxElementIndex > 0) {
+//                int tmp = subArr[0];
+//                subArr[0] = maxElement;
+//                subArr[maxElementIndex] = tmp;
+//            }
+//        }
+//        System.out.println("После преобразований:");
+//        for (int[] subArr : matrix) {
+//            System.out.println(Arrays.toString(subArr));
+//        }
     }
 }
