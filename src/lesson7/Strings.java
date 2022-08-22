@@ -4,16 +4,16 @@ import java.util.Arrays;
 
 public class Strings {
     public static void main(String[] args) {
-        task1();
-        task2();
-        task3();
-        task4();
-        task5();
-        task6();
+//        task1();
+//        task2();
+//        task3();
+//        task4();
+//        task5();
+//        task6();
         task7();
-    }
 
-    public static void task1() {
+    }
+    private static void task1() {
         String firstName = "Ivan";
         String middleName = "Ivanovich";
         String lastName = "Ivanov";
@@ -22,7 +22,7 @@ public class Strings {
 
     }
 
-    public static void task2() {
+    private static void task2() {
         String firstName = "Ivan";
         String middleName = "Ivanovich";
         String lastName = "Ivanov";
@@ -30,13 +30,13 @@ public class Strings {
         System.out.println("Данные ФИО сотрудника для заполнения отчета — " + fullName.toUpperCase() + ".");
     }
 
-    public static void task3() {
+    private static void task3() {
         String fullName = "Иванов Семён Семёнович";
         String replaceFullName = fullName.replace('ё', 'е');
         System.out.println("Данные ФИО сотрудника — " + replaceFullName + ".");
     }
 
-    public static void task4() {
+    private static void task4() {
 
     /*К нам снова обратились за помощью, но теперь уже для того, чтобы написать алгоритм, разбивающий одну строку
     с Ф. И. О. на три — на фамилию, имя и отчество. В качестве исходных данных используйте:
@@ -69,7 +69,7 @@ public class Strings {
         System.out.println("Отчество сотрудника — " + middleName);
     }
 
-    public static void task5() {
+    private static void task5() {
 
     /*Периодически данные в наших регистрах заполняются неверно, и Ф. И. О. сотрудников записывают со строчных букв.
     Такую оплошность нужно исправить, написав программу, которая преобразует написанное со строчных букв Ф. И. О. в
@@ -88,7 +88,7 @@ public class Strings {
         System.out.println("Верное написание Ф. И. О. сотрудника с заглавных букв — " + capitalizeWord);
     }
 
-    public static void task6() {
+    private static void task6() {
 
     /*Имеется две строки.
     Первая: "135"
@@ -110,7 +110,7 @@ public class Strings {
         System.out.println(result);
     }
 
-    public static void task7() {
+    private static void task7() {
 
     /*Дана строка из букв английского алфавита "aabccddefgghiijjkk".
     Нужно найти и напечатать буквы, которые дублируются в строке.
