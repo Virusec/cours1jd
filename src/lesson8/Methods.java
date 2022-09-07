@@ -17,18 +17,9 @@ public class Methods {
 
     public static void isLeap(int year) {
         if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-            printLeap(year);
+            System.out.println(year + " год является високосным");
         } else {
-            printNotLeap(year);
-        }
-    }
-
-    public static void printLeap(int year) {
-        System.out.println(year + " год является високосным");
-    }
-
-    public static void printNotLeap(int year) {
-        System.out.println(year + " год не является високосным");
+            System.out.println(year + " год не является високосным");        }
     }
 
     public static void task1() {
@@ -170,7 +161,5 @@ public class Methods {
 
         int[] array = generateRandomArray();
         System.out.println("Средняя сумма трат за месяц составила " + calculateAverageValue(array) + " рублей");
-//        float average = sum / (float) array.length;
-//        System.out.println("Средняя сумма трат за месяц составила " + average + " рублей");
     }
 }
