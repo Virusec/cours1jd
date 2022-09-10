@@ -27,7 +27,7 @@ public class MidMain {
         }
     }
 
-    public static void addBook(Book[] books, Book newBook) {
+    private static void addBook(Book[] books, Book newBook) {
         for (int i = 0; i < books.length; i++) {
             if (books[i] == null) {
                 books[i] = newBook;
@@ -36,7 +36,7 @@ public class MidMain {
         }
     }
 
-    public static void printBook(Book book) {
+    private static void printBook(Book book) {
         System.out.println(String.join(": ", book.getAuthor().getFirstName() + " " + book.getAuthor().getLastName(), book.getBookName(), String.valueOf(book.getYearOfPublish())));
     }
 }
