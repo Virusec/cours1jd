@@ -37,6 +37,7 @@ public class MidMain {
     }
 
     private static void printBook(Book book) {
-        System.out.println(String.join(": ", book.getAuthor().getFirstName() + " " + book.getAuthor().getLastName(), book.getBookName(), String.valueOf(book.getYearOfPublish())));
+        System.out.println(String.join(": ", book.getAuthor().getFirstName() + " "
+                + book.getAuthor().getLastName(), book.getBookName(), String.valueOf(book.getYearOfPublish())));
     }
 }
