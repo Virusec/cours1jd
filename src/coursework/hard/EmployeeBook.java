@@ -7,7 +7,7 @@ public class EmployeeBook {
         this.employees = new Employee[size];
     }
 
-    public void printEmployeesByDepartment() {
+    public void printAllEmployeesListByDepartment() {
         for (int department = 1; department < 6; department++) {
             for (Employee employee : employees) {
                 if (employee != null && department == employee.getDepartment()) {
@@ -18,9 +18,9 @@ public class EmployeeBook {
     }
 
     public void changeDepartmentByName(String employeeName, int department) {
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null && employeeName.equals(employees[i].getEmployeeName())) {
-                employees[i].setDepartment(department);
+        for (Employee employee : employees) {
+            if (employee != null && employeeName.equals(employee.getEmployeeName())) {
+                employee.setDepartment(department);
                 System.out.println("Department of " + employeeName + " has been changed.");
                 return;
             }
@@ -29,9 +29,9 @@ public class EmployeeBook {
     }
 
     public void changeSalaryByName(String employeeName, int salary) {
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null && employeeName.equals(employees[i].getEmployeeName())) {
-                employees[i].setSalary(salary);
+        for (Employee employee : employees) {
+            if (employee != null && employeeName.equals(employee.getEmployeeName())) {
+                employee.setSalary(salary);
                 System.out.println("Salary of " + employeeName + " has been changed.");
                 return;
             }
@@ -110,15 +110,15 @@ public class EmployeeBook {
         }
     }
 
-    public int calculateByDepartmentAverageSalary(int department) {
+    public double calculateByDepartmentAverageSalary(int department) {
         int sum = calculateByDepartmentSalary(department);
-        int counter = 1;
+        int counter = 0;
         for (Employee employee : employees) {
             if (employee != null && department == employee.getDepartment()) {
                 counter++;
             }
         }
-        return sum/ counter;
+        return (double) sum/ counter;
     }
 
     public int calculateByDepartmentSalary(int department) {

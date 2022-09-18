@@ -28,8 +28,11 @@ public class HardMain {
         employeeBook.changeDepartmentByName("Petrov Petr Petrovich", 5);
         employeeBook.printAllEmployees();
         printSeparator();
-        employeeBook.printEmployeesByDepartment();
+        employeeBook.printAllEmployeesListByDepartment();
         printSeparator();
+        System.out.println(employeeBook.calculateByDepartmentAverageSalary(1));
+        employeeBook.printByDepartmentEmployees(1);
+
     }
 
     public static void printSeparator() {

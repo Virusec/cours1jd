@@ -1,15 +1,15 @@
 package coursework.minAndMid;
 
 public class Main {
-//    private final Employee[] employees;
-//    private int size;
-//
-//    public Main() {
-//        this.employees = new Employee[10];
-//    }
+//    private static Employee[] employees = new Employee[10];
 
     public static void main(String[] args) {
         Employee[] employees = new Employee[10];
+
+//        Employee sss = new Employee("sss", 2, 2222);
+//        Employee ddd = new Employee("ddd", 1, 1000);
+//        employees[0] = sss;
+//        employees[1] = ddd;
 
         addEmployee(employees, new Employee("Suhov Andrei Ivanovich", 2, 10_000));
         addEmployee(employees,new Employee("Kotov Pavel Ivanovich", 2, 80_000));
@@ -143,12 +143,12 @@ public class Main {
     public static void printByDepartmentMaxSalary(Employee[] employees, int department) {
         int max = Integer.MIN_VALUE;
         String name = "";
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null && department == employees[i].getDepartment()) {
-                int value = employees[i].getSalary();
+        for (Employee employee : employees) {
+            if (employee != null && department == employee.getDepartment()) {
+                int value = employee.getSalary();
                 if (value > max) {
                     max = value;
-                    name = employees[i].getEmployeeName();
+                    name = employee.getEmployeeName();
                 }
             }
         }
@@ -176,7 +176,15 @@ public class Main {
     }
 
     public static double calculateAverageSalary(Employee[] employees) {
-        return 1.0 * calculateEmployeeSalaries(employees) / employees.length;
+        int counterEmployees = 0;
+        int sum = 0;
+        for (Employee employee : employees) {
+            if (employee != null) {
+                counterEmployees++;
+                sum += employee.getSalary();
+            }
+        }
+        return 1.0 * sum / counterEmployees;
     }
 
     public static int findMaxSalary(Employee[] employees) {
